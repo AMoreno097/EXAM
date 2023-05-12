@@ -8,6 +8,17 @@ namespace AMorenoAGASYS
 {
     public class Apartado
     {
+        public static void factorial()
+        {
+            Console.WriteLine("Digite un numero entero");
+            int n = int.Parse(Console.ReadLine());
+            int fact = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                fact *= i;
+            }
+            Console.WriteLine("El Factorial de " + n + " es: " + fact);
+        }
         public static void Edad()
         {
             int Edad = 0;
@@ -120,15 +131,55 @@ namespace AMorenoAGASYS
             Console.WriteLine("Escriba una palabra");
             string str = Console.ReadLine();
             char[] arr;
+            
 
             arr = str.ToCharArray();
             for (int i = 0; i < arr.Length; i++)
             {
                 char l = arr[i];
-
+               
                 Console.Write("{0}", ++l);
             }
         }
+        public static void sopaLetras()
+        {
+            Console.WriteLine("Escribe una palabra");
+            string palabra = Console.ReadLine();
+
+            string ordenar= new string(palabra.OrderBy(x => x).ToArray());
+            Console.WriteLine(ordenar);
+        }
+        public static void palabraMasLarga()
+
+        { 
+            
+            string comparacion = "";
+
+            Console.WriteLine("Escriba el numero de palabras a comparar");
+            int str = int.Parse(Console.ReadLine());
+            for(int i=1; i<=str; i++)
+            {
+                Console.Write("Ingrese la palabra ");
+                string[] palabra = Console.ReadLine().Split();
+                foreach (string palabras in palabra)
+                {
+                    
+                    if (palabras.Length > comparacion.Length)
+                    {
+                        comparacion = palabras;
+                    }
+                }
+            }
+            Console.WriteLine("La palabra mas larga es: " +comparacion+ " con " +comparacion.Length+ " letras");
+
+
+           
+
+
         
+
+        }
+
+
     }
 }
